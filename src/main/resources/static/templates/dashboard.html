@@ -1,0 +1,37 @@
+<div class="dashboard_wrapper">
+	<h2>You are in dashboard</h2>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+			  <div class="panel-heading">List of articles</div>
+			  <div class="panel-body">
+				  <button type="submit" class="btn btn-primary btn-sm" ng-click="refreshResults()">Refresh</button>
+				  <div class="table-responsive">
+				  <table class="table">
+					<thead>
+						<tr>
+							<th>resultId</th>
+							<th>initialBalance</th>
+							<th>result</th>
+							<th>sharpeRatio</th>
+							<th>backTestId</th>
+							
+						</tr>
+					</thead>
+					<tr ng-repeat="result in results">
+						<th scope="row">{{result.id}}</th>
+						<td>{{result.result}}</td>
+						<td>{{result.sharpeRatio}}</td>
+						<td>
+							<span style="float:left;margin:2px;" ng-repeat="(key, value) in result.params" class="label label-info" style="margin-right: 5px;">{{key}}: {{value}}</span>
+						</td>
+						<th>{{result.backTestId}}</th>
+						
+					</tr>
+				  </table>
+				  </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ineb_admin">
+  <head>
+	<base href="/" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Ineb Blog Admin interface</title>
+	<style type="text/css">
+        [ng\:cloak], [ng-cloak], .ng-cloak {
+            display: none !important;
+        }
+    </style>
+    <link href="css/style.min.css" rel="stylesheet">
+	<link href="libs/animate.css/animate.min.css" rel="stylesheet">
+    <link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="libs/PACE/themes/orange/pace-theme-flat-top.css" rel="stylesheet">
+  </head>
+  <body ng-cloak class="ng-cloak sgsm_login" id="sgsm">
+	<div class="wrapper" ng-view></div>
+	
+	<script>
+	/*window.paceOptions = {
+		document: true, // disabled
+		eventLag: true,
+		restartOnPushState: true,
+		restartOnRequestAfter: true,
+		ajax: {
+			trackMethods: [ 'POST','GET']
+		}
+
+	};*/
+	</script>
+	<script src="libs/PACE/pace.min.js"></script>
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="libs/angular/angular.js"></script>
+	<script src="libs/angular-route/angular-route.min.js"></script>
+	<script src="js/angular-md5.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/ineb-admin.js"></script>
+	<script src="js/plain.js"></script>
+  </body>
+</html>
