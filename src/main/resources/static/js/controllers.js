@@ -53,6 +53,42 @@ xegexControllers
     ])
 	.controller('DashboardCtrl', ['$scope', '$http', '$location', '$window',
         function($scope,  $http, $location, $window) {
-            
+            $scope.loansall = [];
+
+            $http.get('/backtestresource/backtest/all').success(function(data) {
+                $scope.loansall = data.map(function(loansall) {
+                    return loansall;
+                });
+            });
+        }
+    ])
+    .controller('ConfigCtrl', ['$scope', '$http', '$location', '$window',
+        function($scope,  $http, $location, $window) {
+            $scope.baseconfig = {};
+            $scope.loanqualitycategories = [];
+            $scope.loanservcoeffs = [];
+            $scope.loanservcoeffsmatrix = [];
+
+            $http.get('http://localhost:9100/config').success(function(baseconfig) {
+                $scope.baseconfig = baseconfig;
+            });
+
+            $http.get('http://localhost:9100/risksparams/loanqualitycategories').success(function(loanqualitycategories) {
+                $scope.loanqualitycategories = loanqualitycategories.map(function(loanqualitycategories) {
+                    return loanqualitycategories;
+                });
+            });
+
+            $http.get('http://localhost:9100/risksparams/loanservcoeffs').success(function(loanservcoeffs) {
+                $scope.loanservcoeffs = loanservcoeffs.map(function(loanservcoeffs) {
+                    return loanservcoeffs;
+                });
+            });
+
+            $http.get('http://localhost:9100/risksparams/loanservcoeffsmatrix').success(function(loanservcoeffsmatrix) {
+                $scope.loanservcoeffsmatrix = loanservcoeffsmatrix.map(function(loanservcoeffsmatrix) {
+                    return loanservcoeffsmatrix;
+                });
+            });
         }
     ]);

@@ -1,32 +1,80 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="assets/img/logo-sg.png" alt="SGSM dashboard logo" style="height: 42px;"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="Search...">
+            </form>
+        </div>
+    </div>
+</nav>
 <div class="dashboard_wrapper">
 	<h2>You are in dashboard</h2>
 	<div class="row">
-		<div class="col-md-12">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <aside class="navigation">
+                <nav>
+                    <ul class="nav">
+                        <li>
+                            <a href="/#/dashboard">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="/#/backtest">Legal entity</a>
+                        </li>
+                        <li>
+                            <a href="/#/strategy">Customers</a>
+                        </li>
+                        <li>
+                            <a href="/#/config">Config</a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
+		<div class="ol-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
 			<div class="panel panel-default">
-			  <div class="panel-heading">List of articles</div>
+			  <div class="panel-heading panel-custom">Active and non-portfolio loans</div>
 			  <div class="panel-body">
 				  <button type="submit" class="btn btn-primary btn-sm" ng-click="refreshResults()">Refresh</button>
 				  <div class="table-responsive">
 				  <table class="table">
 					<thead>
 						<tr>
-							<th>resultId</th>
-							<th>initialBalance</th>
-							<th>result</th>
-							<th>sharpeRatio</th>
-							<th>backTestId</th>
-							
+							<th>Customer number, GFCUS</th>
+							<th>Customer ID, GFCUN</th>
+							<th>Customer legal data</th>
+							<th>Branch ID, ABD</th>
+							<th>Account suffix, AND</th>
+							<th>KKC1</th>
+							<th>KKC2</th>
+							<th>Interest rate</th>
 						</tr>
 					</thead>
 					<tr ng-repeat="result in results">
-						<th scope="row">{{result.id}}</th>
-						<td>{{result.result}}</td>
-						<td>{{result.sharpeRatio}}</td>
+						<th scope="row">{{loansall.id}}</th>
+						<td>{{loansall.result}}</td>
+						<td>{{loansall.sharpeRatio}}</td>
 						<td>
 							<span style="float:left;margin:2px;" ng-repeat="(key, value) in result.params" class="label label-info" style="margin-right: 5px;">{{key}}: {{value}}</span>
 						</td>
-						<th>{{result.backTestId}}</th>
-						
+						<th>{{loansall.backTestId}}</th>
+						<th>{{loansall.backTestId}}</th>
+						<th>{{loansall.backTestId}}</th>
+						<th>{{loansall.backTestId}}</th>
 					</tr>
 				  </table>
 				  </div>
@@ -35,3 +83,9 @@
 		</div>
 	</div>
 </div>
+<!--<script>
+    $(document).ready(function() {
+        $('#datasets-xg').DataTable();
+        $('#strategies-xg').DataTable();
+    } );
+</script>-->

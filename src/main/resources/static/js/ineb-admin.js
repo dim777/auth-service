@@ -17,6 +17,10 @@ ineb_admin.config(['$routeProvider', '$locationProvider', '$httpProvider',
                 templateUrl: 'templates/dashboard.html',
                 controller: 'DashboardCtrl'
             })
+            .when('/config', {
+                templateUrl: 'templates/config.html',
+                controller: 'ConfigCtrl'
+            })
             /*.when('/login', {
                 templateUrl: 'templates/login.html',
                 controller: 'LoginCtrl'
