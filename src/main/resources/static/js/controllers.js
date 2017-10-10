@@ -55,10 +55,8 @@ xegexControllers
         function($scope,  $http, $location, $window) {
             $scope.loansall = [];
 
-            $http.get('/backtestresource/backtest/all').success(function(data) {
-                $scope.loansall = data.map(function(loansall) {
-                    return loansall;
-                });
+            $http.get('http://localhost:9100/loansquality').success(function(loansall) {
+                $scope.loansall = loansall;
             });
         }
     ])
