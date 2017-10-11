@@ -110,15 +110,19 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Type</th>
-                                    <th>LastDays</th>
-                                    <th>MoreThanDays</th>
+                                    <th>isLegalEntitity</th>
+                                    <th>forLastNDays</th>
+                                    <th>moreOrEqThanDays</th>
+                                    <th>lessThanDays</th>
                                 </tr>
                                 </thead>
                                 <tr ng-repeat="loanservcoeff in loanservcoeffs">
                                     <th scope="row">{{loanservcoeff.id}}</th>
                                     <td>{{loanservcoeff.type}}</td>
-                                    <td>{{loanservcoeff.lastdays}}</td>
-                                    <td>{{loanservcoeff.moreThanDays}}</td>
+                                    <td>{{loanservcoeff.isLegalEntitity}}</td>
+                                    <td>{{loanservcoeff.forLastNDays}}</td>
+                                    <td>{{loanservcoeff.moreOrEqThanDays}}</td>
+                                    <td>{{loanservcoeff.lessThanDays}}</td>
                                 </tr>
                             </table>
                         </div>
